@@ -14,7 +14,7 @@
     </button>
     <hr />
     <FormsBlock /> 
-     <form @submit="formSubmit">
+     <form @submit.prevent>
       <input type="text" />
       <br/>
       <hr/>
@@ -40,11 +40,7 @@ export default {
       return "BlockContent" + this.nameComponent;
     },
   },
-   methods: {
-     formSubmit(e) {
-       e.preventDefault()
-     }
-   },
+ 
   components: {
     BlockContentOne,
     BlockContentTwo,
