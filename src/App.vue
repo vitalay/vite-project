@@ -13,14 +13,20 @@
       THREE
     </button>
     <hr />
-    <FormsBlock /> 
+   
      <form @submit.prevent="formSubmit">
       <input type="text" :value="inputOne" @input="inputChangeOne" class="form-control">
-      <input type="text" v-model="inputTwo" class="form-control">
+      <input 
+      type="text" 
+      v-model="inputTwo" 
+      class="form-control"
+      ref="inputRefTwo"
+      >
       <br/>
       <hr/>
       <button type="submit" :value="inputTwo" class="btn btn-primary">Отправить</button>
-    </form>
+    </form> 
+    <FormsBlock /> 
   </div>
 </template>
 
@@ -47,6 +53,7 @@ export default {
     formSubmit() {
       console.log('formSubmit', this.inputOne)
       console.log('formSubmit', this.inputTwo)
+      console.log('inputRefTwo', this.$refs.inputRefTwo.value)
     },
      
     inputChangeOne(event) {
@@ -60,7 +67,7 @@ export default {
     BlockContentOne,
     BlockContentTwo,
     BlockContentThree,
-    FormsBlock,
+    FormsBlock
   },
 };
 </script>
