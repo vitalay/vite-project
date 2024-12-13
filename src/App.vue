@@ -2,10 +2,10 @@
   <div class="container-fluid">
     <h1>Hello</h1>
     <keep-alive>
-      <BlockContentOne v-if="nameComponent === 'One'" />
-      <BlockContentTwo v-else-if="nameComponent === 'Two'" />
-      <BlockContentThree v-else />
+      <component :is="changeComponent"></component>
+
     </keep-alive>
+    
     <hr />
     <button @click="nameComponent = 'One'" class="btn btn-success">ONE</button>
     <hr />
@@ -26,6 +26,12 @@ export default {
     return {
       nameComponent: "One",
     };
+  },
+  computed: {
+    changeComponent() {
+      return 'BlockContent' + this.nameComponent
+    }
+
   },
   components: {
     BlockContentOne,
