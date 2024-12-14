@@ -29,6 +29,10 @@
 
     <FormsBlock></FormsBlock>
     <FormsBlock2></FormsBlock2>
+    <message-one 
+    message="Сообщение из компонента message-one" :isOpen="isOpen"
+    @close="close">
+    </message-one>
   </div>
 </template>
 
@@ -38,11 +42,13 @@ import BlockContentTwo from "./BlockContentTwo.vue";
 import BlockContentThree from "./BlockContentThree.vue";
 import FormsBlock from "./FormsBlock.vue";
 import FormsBlock2 from "./FormsBlock2.vue";
+import MessageOne from "./components/MessageOne.vue";
 
 export default {
 
   data() {
     return {
+      isOpen: false,
       inputOne: "",
       inputTwo: "",
       nameComponent: "One",
@@ -54,6 +60,9 @@ export default {
     },
   },
   methods: {
+    close() {
+      this.isOpen = !this.isOpen
+    },
     formSubmit() {
       console.log('formSubmit', this.inputOne)
       console.log('formSubmit', this.inputTwo)
@@ -72,7 +81,8 @@ export default {
     BlockContentTwo,
     BlockContentThree,
     FormsBlock,
-    FormsBlock2
+    FormsBlock2,
+    MessageOne
   }, 
 };
 </script>
