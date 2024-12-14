@@ -29,10 +29,15 @@
 
     <FormsBlock></FormsBlock>
     <FormsBlock2></FormsBlock2>
-    <message-one 
+    <!-- <message-one 
     message="Сообщение из компонента message-one" :isOpen="isOpen"
     @close="close">
     </message-one>
+    <message-two
+
+    >
+      
+    </message-two> -->
   </div>
 </template>
 
@@ -42,7 +47,7 @@ import BlockContentTwo from "./BlockContentTwo.vue";
 import BlockContentThree from "./BlockContentThree.vue";
 import FormsBlock from "./FormsBlock.vue";
 import FormsBlock2 from "./FormsBlock2.vue";
-import MessageOne from "./components/MessageOne.vue";
+
 
 export default {
 
@@ -82,7 +87,8 @@ export default {
     BlockContentThree,
     FormsBlock,
     FormsBlock2,
-    MessageOne
+ 
+
   }, 
 };
 </script>
