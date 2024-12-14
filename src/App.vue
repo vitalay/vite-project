@@ -26,7 +26,9 @@
       <hr/>
       <button type="submit" :value="inputTwo" class="btn btn-primary">Отправить</button>
     </form> 
-    <FormsBlock /> 
+
+    <FormsBlock></FormsBlock>
+    <FormsBlock2></FormsBlock2>
   </div>
 </template>
 
@@ -35,8 +37,10 @@ import BlockContentOne from "./BlockContentOne.vue";
 import BlockContentTwo from "./BlockContentTwo.vue";
 import BlockContentThree from "./BlockContentThree.vue";
 import FormsBlock from "./FormsBlock.vue";
+import FormsBlock2 from "./FormsBlock2.vue";
 
 export default {
+
   data() {
     return {
       inputOne: "",
@@ -67,8 +71,9 @@ export default {
     BlockContentOne,
     BlockContentTwo,
     BlockContentThree,
-    FormsBlock
-  },
+    FormsBlock,
+    FormsBlock2
+  }, 
 };
 </script>
 
